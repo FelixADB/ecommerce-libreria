@@ -29,10 +29,14 @@ const createProduct = async (req, res, next) => {
   try {
     const { name, description, price, stock } = req.body;
     let imageUrl = '';
+    
     try {
-      const randomImageId = Math.floor(Math.random() * 1000);
-      const apiResponse = await axios.get(`https://picsum.photos/id/${randomImageId}/info`);
-      imageUrl = apiResponse.data.download_url;
+      const randomPage = Math.floor(Math.random() * 10) + 1;
+      const apiResponse = await axios.get(`https://picsum.photos/v2/list?page=${randomPage}&limit=10`);
+
+      const randomIndex = Math.floor(Math.random() * apiResponse.data.length);
+      imageUrl = apiResponse.data[randomIndex].download_url;
+      
     } catch (apiError) {
       console.error('Error al consumir la API externa:', apiError.message);
       imageUrl = 'https://via.placeholder.com/400x600?text=Sin+Portada';
