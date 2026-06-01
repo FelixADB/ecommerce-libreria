@@ -23,7 +23,7 @@ export default function EditBook() {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const res = await fetch(`https://backend-libreria-xug0.onrender.com/${id}`);
+        const res = await fetch(`https://backend-libreria-xug0.onrender.com/api/products/${id}`);
         const result = await res.json();
         if (!res.ok) throw new Error(result.message || 'Error al cargar el libro');
 
@@ -52,7 +52,7 @@ export default function EditBook() {
     setError('');
 
     try {
-      const res = await fetch(`https://backend-libreria-xug0.onrender.com/${id}`, {
+      const res = await fetch(`https://backend-libreria-xug0.onrender.com/api/products/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -11,7 +11,7 @@ export default function DeleteButton({ id, redirectHome = false }) {
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch(`https://backend-libreria-xug0.onrender.com/${id}`, {
+      const res = await fetch(`https://backend-libreria-xug0.onrender.com/api/products/${id}`, {
         method: 'DELETE',
       });
 
