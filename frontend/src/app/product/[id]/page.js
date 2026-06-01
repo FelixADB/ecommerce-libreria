@@ -3,7 +3,7 @@ import DeleteButton from '../../../components/DeleteButton';
 import CartButton from '../../../components/CartButton';
 
 async function getProduct(id) {
-  const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+  const res = await fetch(`https://backend-libreria-xug0.onrender.com/${id}`, {
     cache: 'no-store'
   });
   

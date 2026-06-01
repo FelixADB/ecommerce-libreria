@@ -2,7 +2,7 @@ import Link from 'next/link';
 import DeleteButton from '../components/DeleteButton';
 
 async function getProducts() {
-  const res = await fetch('http://localhost:3000/api/products', {
+  const res = await fetch('https://backend-libreria-xug0.onrender.com', {
     cache: 'no-store'
   });
   if (!res.ok) throw new Error('Error al cargar los productos');

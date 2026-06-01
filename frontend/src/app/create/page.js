@@ -26,7 +26,7 @@ export default function CreateBook() {
     setError('');
 
     try {
-      const res = await fetch('http://localhost:3000/api/products', {
+      const res = await fetch('https://backend-libreria-xug0.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
